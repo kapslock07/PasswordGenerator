@@ -1,21 +1,5 @@
-// TO DO - CONFIRM ARRAYS, FIGURE OUT, CREATE PASSWORD USING INPUTS
-// NEED TO DO -->CHANGE ARRAYS TO possibleChars & guaranteedChars
-// guaranteedChars
-// if()
 
-//  Character Types
-// hasLowercase = true;
-// hasppercase = true
-// hasNUm = false;
-// hasSpecChar = true;
-
-// // if(hasLowercase) {
-//   possibleChars=allLowercase;
-// }
-// else if (hasUppercase) {
-//   possibleChars=uppercase
-// }
-// }
+// "!", "#",	"$",	"%",	"&", 	"'", 	"(",	")",	"*",	"+",	",",	"-",	".",	":",	";",	"<",	"=",	">",	"?",	"@",	"[",	"\",	"]",	"^",	"_",	"`",	"{",	"|",	"}",	"~"
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -23,25 +7,24 @@ var generateBtn = document.querySelector("#generate");
 var lowercaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialChar = ["!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
+var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 var allChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
 var lowerAndUpperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var lowerAndNumChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var lowerAndSpecialChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
+var lowerAndSpecialChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 var uppercaseAndNumChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var uppercaseAndSpecialChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
-var numAndSpecialChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
+var uppercaseAndSpecialChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+var numAndSpecialChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 var lowerUpperNumChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var lowerUpperSpecialChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
-var lowerNumSpecialChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
-var upperNumSpecialChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "#", "$", "%", "&", "*", "/", "?", "@", "~"];
-
+var lowerUpperSpecialChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+var lowerNumSpecialChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+var upperNumSpecialChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
 var characterNum = ""
 var possibleChar = ""
 var password = ""
 
-// var guaranteedChar = ""
+
 
 
 
@@ -57,7 +40,6 @@ function writePassword() {
       generatePassword();
     }
 
-
     var includeLowercase = confirm("Would you like to include lowercase characters in your password? Please select 'OK' for yes or 'Cancel' for no.");
     var includeUppercase = confirm("Would you like to include uppercase characters in your password? Please select 'OK' for yes or 'Cancel' for no.");
     var includeNum = confirm("Would you like to include numeric characters in your password? Please select 'OK' for yes or 'Cancel' for no.");
@@ -71,24 +53,21 @@ function writePassword() {
     }
 
     else if ((includeUppercase) && (includeLowercase == false) && (includeNum == false) && (includeSpecialChar == false)) {
-      possibleChar = uppercaseChar
+      for (var i = 0; i < characterNum; i++)
+        password = password + uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
     }
 
     else if ((includeNum) && (includeLowercase == false) && (includeUppercase == false) && (includeSpecialChar == false)) {
-      possibleChar = numChar
+      for (var i = 0; i < characterNum; i++)
+        password = password + numChar[Math.floor(Math.random() * (numChar.length - 1))];
     }
 
     else if ((includeSpecialChar) && (includeLowercase == false) && (includeUppercase == false) && (includeNum == false)) {
-      possibleChar = specialChar
+      for (var i = 0; i < characterNum; i++)
+        password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
     }
 
     else if ((includeLowercase) && (includeUppercase) && (includeNum) && (includeSpecialChar)) {
-      console.log(lowercaseChar)
-      console.log(uppercaseChar)
-      console.log(numChar)
-      console.log(specialChar)
-      console.log(allChar)
-
       for (var i = 0; i < characterNum; i++) {
         if (i == 0) {
           password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
@@ -187,19 +166,67 @@ function writePassword() {
     }
 
     else if ((includeLowercase) && (includeUppercase) && (includeNum) && (includeSpecialChar == false)) {
-      possibleChar = lowerUpperNumChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
+        }
+        else if (i == 2) {
+          password = password + numChar[Math.floor(Math.random() * (numChar.length - 1))];
+        }
+        else {
+          password = password + lowerUpperNumChar[Math.floor(Math.random() * (lowerUpperNumChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeLowercase) && (includeUppercase) && (includeSpecialChar) && (includeNum == false)) {
-      possibleChar = lowerUpperSpecialChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
+        }
+        else if (i == 2) {
+          password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
+        }
+        else {
+          password = password + lowerUpperSpecialChar[Math.floor(Math.random() * (lowerUpperSpecialChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeLowercase) && (includeNum) && (includeSpecialChar) && (includeUppercase == false)) {
-      possibleChar = lowerNumSpecialChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + numChar[Math.floor(Math.random() * (numChar.length - 1))];
+        }
+        else if (i == 2) {
+          password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
+        }
+        else {
+          password = password + lowerNumSpecialChar[Math.floor(Math.random() * (lowerNumSpecialChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeUppercase) && (includeNum) && (includeSpecialChar) && (includeLowercase == false)) {
-      possibleChar = upperNumSpecialChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + numChar[Math.floor(Math.random() * (numChar.length - 1))];
+        }
+        else if (i == 2) {
+          password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
+        }
+        else {
+          password = password + upperNumSpecialChar[Math.floor(Math.random() * (upperNumSpecialChar.length - 1))];
+        }
+      }
     }
 
 
@@ -235,4 +262,3 @@ function buildString() {
   return randString;
 
 }
-// if(possibleChar = upperandlowerchar then replace index 0 value with lower and 1 with upper)
