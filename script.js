@@ -1,6 +1,3 @@
-
-// "!", "#",	"$",	"%",	"&", 	"'", 	"(",	")",	"*",	"+",	",",	"-",	".",	":",	";",	"<",	"=",	">",	"?",	"@",	"[",	"\",	"]",	"^",	"_",	"`",	"{",	"|",	"}",	"~"
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -84,9 +81,8 @@ function writePassword() {
           password = password + allChar[Math.floor(Math.random() * (allChar.length - 1))];
         }
       }
-
-      console.log(password)
     }
+
     else if ((includeLowercase) && (includeUppercase) && (includeNum == false) && (includeSpecialChar == false)) {
       for (var i = 0; i < characterNum; i++) {
         if (i == 0) {
@@ -234,7 +230,7 @@ function writePassword() {
 
     //var password = generatePassword();
     //var password = buildString();
-    // console.log(password);
+
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
@@ -247,18 +243,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-buildString();
 
-function buildString() {
-
-  var randString = ""
-  for (var i = 0; i < characterNum; i++) {
-    var randChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
-    randString = randString.concat(randChar);
-
-  }
-
-
-  return randString;
-
-}
