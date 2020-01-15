@@ -39,7 +39,9 @@ var upperNumSpecialChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"
 
 var characterNum = ""
 var possibleChar = ""
-// var guaranteedChars = ""
+var password = ""
+
+// var guaranteedChar = ""
 
 
 
@@ -64,7 +66,8 @@ function writePassword() {
 
 
     if ((includeLowercase) && (includeUppercase == false) && (includeNum == false) && (includeSpecialChar == false)) {
-      possibleChar = lowercaseChar
+      for (var i = 0; i < characterNum; i++)
+        password = password + lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
     }
 
     else if ((includeUppercase) && (includeLowercase == false) && (includeNum == false) && (includeSpecialChar == false)) {
@@ -80,31 +83,107 @@ function writePassword() {
     }
 
     else if ((includeLowercase) && (includeUppercase) && (includeNum) && (includeSpecialChar)) {
-      possibleChar = allChar
-    }
+      console.log(lowercaseChar)
+      console.log(uppercaseChar)
+      console.log(numChar)
+      console.log(specialChar)
+      console.log(allChar)
 
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
+        }
+        else if (i == 2) {
+          password = password + numChar[Math.floor(Math.random() * (numChar.length - 1))];
+        }
+        else if (i == 3) {
+          password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
+        }
+        else {
+          password = password + allChar[Math.floor(Math.random() * (allChar.length - 1))];
+        }
+      }
+
+      console.log(password)
+    }
     else if ((includeLowercase) && (includeUppercase) && (includeNum == false) && (includeSpecialChar == false)) {
-      possibleChar = lowerAndUpperChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
+        }
+        else {
+          password = password + lowerAndUpperChar[Math.floor(Math.random() * (lowerAndUpperChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeLowercase) && (includeNum) && (includeUppercase == false) && (includeSpecialChar == false)) {
-      possibleChar = lowerAndNumChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + numChar[Math.floor(Math.random() * (numChar.length - 1))];
+        }
+        else {
+          password = password + lowerAndNumChar[Math.floor(Math.random() * (lowerAndNumChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeLowercase) && (includeSpecialChar) && (includeUppercase == false) && (includeNum == false)) {
-      possibleChar = lowerAndSpecialChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = lowercaseChar[Math.floor(Math.random() * (lowercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
+        }
+        else {
+          password = password + lowerAndSpecialChar[Math.floor(Math.random() * (lowerAndSpecialChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeUppercase) && (includeNum) && (includeLowercase == false) && (includeSpecialChar == false)) {
-      possibleChar = uppercaseAndNumChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + numChar[Math.floor(Math.random() * (numChar.length - 1))];
+        }
+        else {
+          password = password + uppercaseAndNumChar[Math.floor(Math.random() * (uppercaseAndNumChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeUppercase) && (includeSpecialChar) && (includeLowercase == false) && (includeNum == false)) {
-      possibleChar = uppercaseAndSpecialChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = uppercaseChar[Math.floor(Math.random() * (uppercaseChar.length - 1))];
+        } else if (i == 1) {
+          password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
+        }
+        else {
+          password = password + uppercaseAndSpecialChar[Math.floor(Math.random() * (uppercaseAndSpecialChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeNum) && (includeSpecialChar) && (includeLowercase == false) && (includeUppercase == false)) {
-      possibleChar = numAndSpecialChar
+      for (var i = 0; i < characterNum; i++) {
+        if (i == 0) {
+          password = numChar[Math.floor(Math.random() * (numChar.length - 1))];
+        } else if (i == 1) {
+          password = password + specialChar[Math.floor(Math.random() * (specialChar.length - 1))];
+        }
+        else {
+          password = password + numAndSpecialChar[Math.floor(Math.random() * (numAndSpecialChar.length - 1))];
+        }
+      }
     }
 
     else if ((includeLowercase) && (includeUppercase) && (includeNum) && (includeSpecialChar == false)) {
@@ -127,7 +206,7 @@ function writePassword() {
 
 
     //var password = generatePassword();
-    var password = buildString();
+    //var password = buildString();
     // console.log(password);
     var passwordText = document.querySelector("#password");
 
@@ -149,10 +228,11 @@ function buildString() {
   for (var i = 0; i < characterNum; i++) {
     var randChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
     randString = randString.concat(randChar);
+
   }
 
 
   return randString;
 
-
 }
+// if(possibleChar = upperandlowerchar then replace index 0 value with lower and 1 with upper)
